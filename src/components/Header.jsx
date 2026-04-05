@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
-import logoImg from '../assets/logo.png'
+import logoImg from '../assets/gold-logo.png'
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -8,6 +8,8 @@ const navLinks = [
   { href: '#testimonials', label: 'Testimonials' },
   { href: '#contact', label: 'Contact' },
 ]
+
+const headerTagline = 'Where your gold shines as cash'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -108,10 +110,10 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="relative mx-auto flex h-16 max-h-16 max-w-6xl items-center justify-between gap-4 overflow-visible px-4 sm:px-6">
+      <div className="relative mx-auto flex h-16 max-h-16 max-w-6xl items-center justify-between gap-2 overflow-visible px-4 sm:gap-4 sm:px-6 md:gap-4">
         <a
           href="#home"
-          className="relative z-10 flex h-16 items-center overflow-visible"
+          className="relative z-10 flex h-16 shrink-0 items-center overflow-visible"
           onClick={close}
         >
           <img
@@ -121,6 +123,12 @@ export default function Header() {
             decoding="async"
           />
         </a>
+
+        <p
+          className="header-tagline-gold-flow min-w-0 flex-1 px-1 text-center text-sm font-bold leading-snug tracking-tight sm:text-base md:hidden"
+        >
+          {headerTagline}
+        </p>
 
         <nav
           className="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex"
@@ -137,7 +145,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           <a
             href="#contact"
             className="btn-hover-amber hidden rounded-full bg-amber-500 px-4 py-2 text-sm font-semibold text-white shadow-md hover:bg-amber-600 sm:inline-block"

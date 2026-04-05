@@ -160,6 +160,38 @@ body {
   animation: backdrop-fade-in 0.25s ease-out forwards;
 }
 
+/* Header tagline: gold shimmer flowing through text */
+@keyframes header-tagline-gold-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.header-tagline-gold-flow {
+  background-image: linear-gradient(
+    105deg,
+    #334155 0%,
+    #334155 28%,
+    #92400e 38%,
+    #d97706 44%,
+    #f59e0b 48%,
+    #fde68a 50%,
+    #fbbf24 52%,
+    #f59e0b 56%,
+    #b45309 62%,
+    #334155 72%,
+    #334155 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: header-tagline-gold-flow 3.5s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-bounce-slow {
     animation: none;
@@ -190,6 +222,14 @@ body {
 
   .animate-backdrop-fade-in {
     animation: none;
+  }
+
+  .header-tagline-gold-flow {
+    animation: none;
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    color: #92400e;
   }
 
   .btn-hover-amber:hover,

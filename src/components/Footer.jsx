@@ -1,4 +1,4 @@
-import logoImg from '../assets/logo.png'
+import logoImg from '../assets/gold-logo.png'
 
 const quickLinks = [
   { href: '#home', label: 'Home' },
